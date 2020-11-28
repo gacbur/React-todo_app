@@ -1,38 +1,171 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+  font-family: 'Josefin Sans', sans-serif;;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app{
+  width:100%;
   min-height: 100vh;
+  background-color: #E3E4F1;
+  position: relative;
+  display: flex;
+}
+
+.app-image-background{
+  background-image: url('./images/bg-desktop-light.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  width:100%;
+  height: 250px;
+}
+
+.todo-cnt{
+  width:60%;
+  height: 80%;
+  margin: 60px auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  z-index: 1000;
+  color:white
+}
+
+.header{
+  height: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.header h1{
+  font-size: 36px;
+  letter-spacing: 9px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  flex-grow: 1;
+}
+
+.todo-add{
+  background-color: white;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  width: 100%;
+}
+
+.todo-add-btn-cnt{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width:10%;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-add-btn-cnt input[type="button"]{
+  padding:.2em .7em;
+  border:1px solid darkgray;
+  border-radius: 50em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-add-btn-cnt input[type="button"]:focus{
+  outline: none;
+}
+
+.todo-add-btn-cnt input[type="button"]:hover{
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  cursor: pointer;
+}
+
+.todo-add input[type="text"]{
+  font-size: 18px;
+  height: 100%;
+  width: 90%;
+  padding:0em .5em;
+  background-color: white;
+  border:none;
+  color:#9495A5;
+  border-radius: 8px;
+}
+
+.todo-list{
+  width:100%;
+  overflow: hidden;
+  margin-top:2em;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+
+.list-cnt{
+
+  padding-top:.4em;
+}
+
+.list-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60px;
+  list-style: none;
+  color:#494C6B;
+  padding-right: 1.5em;
+  padding-left: .7em;
+}
+
+.list-item:first-child, .list-item + .list-item{
+  border-bottom: 1px solid #979797;
+}
+
+.list-item input{
+  width:10%;
+  padding:.5em;
+}
+
+.list-item input[type="checkbox"]{
+  padding:.5em;
+}
+
+.list-item p{
+  flex-grow: 1;
+}
+
+.list-item img{
+ cursor: pointer;
+}
+
+.todo-list-footer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding:0em 2em;
+  color:#494C6B;
+  font-size: 14px;
+  width:100%;
+  height: 80px;
+  background-color: white;
+  display: flex;
+}
+
+.todo-list-footer button{
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.items-left{
+  flex:0.8;
+}
+
+.items-filter-btns{
+  flex:1;
+}
+
+.fltr-btn:first-child, .fltr-btn + .fltr-btn{
+  margin-right:1.5em;
 }
