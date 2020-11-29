@@ -1,0 +1,48 @@
+
+
+body.dark-mode .app{
+    background-color: hsl(235, 21%, 11%)
+}
+
+body.dark-mode .app-image-background{
+    background-image: url('./images/bg-desktop-dark.jpg');
+}
+
+body.dark-mode .todo-add{
+    background-color: hsl(235, 24%, 19%);
+}
+
+body.dark-mode .todo-add-btn-cnt input[type="button"]{
+    background-color: hsl(235, 24%, 19%);
+}
+
+body.dark-mode .todo-add input[type="text"]{
+    background-color: hsl(235, 24%, 19%);
+    color:  hsl(234, 11%, 52%)
+}
+
+body.dark-mode .todo-list{
+    background-color: hsl(235, 24%, 19%);
+}
+
+body.dark-mode .list-item:first-child{
+    border-bottom-color: hsl(237, 14%, 26%);
+}
+
+body.dark-mode .list-item + .list-item{
+    border-bottom-color: hsl(237, 14%, 26%);
+}
+
+body.dark-mode .todo-list-footer{
+    background-color: hsl(235, 24%, 19%);
+}
+
+body.dark-mode button{
+    background-color: hsl(235, 24%, 19%);
+    color:  hsl(234, 11%, 52%)
+}
+
+body.dark-mode button:hover{
+    color:  hsl(236, 33%, 92%);
+}
+

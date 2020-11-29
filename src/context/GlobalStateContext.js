@@ -1,20 +1,24 @@
 import React, { createContext, useState, useEffect } from 'react'
 
 const initialState = {
-    todoItems: []
+    todoItems: localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []
 }
 
 export const GlobalStateContext = createContext(initialState)
 
 export const GlobalStateContextProvider = (props) => {
 
-    const [todoList, setTodoList] = useState([])
+    const [todoList, setTodoList] = useState(initialState.todoItems)
 
     const [filterStatus, setFilterStatus] = useState('all')
     const [filteredTodo, setFilteredTodo] = useState([])
 
     useEffect(() => {
         filterHandler()
+    }, [todoList, filterStatus])
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todoList))
     }, [todoList, filterStatus])
 
 
@@ -46,7 +50,6 @@ export const GlobalStateContextProvider = (props) => {
     }
 
     const listItemCompleted = (id) => {
-        console.log(id)
         setTodoList(todoList.map(item => {
             if (item.id === id) {
                 return {
@@ -58,6 +61,10 @@ export const GlobalStateContextProvider = (props) => {
         }))
     }
 
+    const clearCompleted = () => {
+        setTodoList(todoList.filter(item => item.isDone === false))
+    }
+
     return (
         <GlobalStateContext.Provider value={{
             todoList,
@@ -65,7 +72,8 @@ export const GlobalStateContextProvider = (props) => {
             removeFromList,
             setFilterStatus,
             listItemCompleted,
-            filteredTodo
+            filteredTodo,
+            clearCompleted
         }}>
             {props.children}
         </GlobalStateContext.Provider>

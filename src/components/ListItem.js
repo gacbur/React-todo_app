@@ -24,6 +24,7 @@ const ListItem = ({ item }) => {
                 ></input>
                 <p>{item.text}</p>
                 <img
+                    className="delete-item-icon"
                     onClick={() => removeFromList(item.id)}
                     src={cross}
                     alt="delete"></img>
