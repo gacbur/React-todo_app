@@ -19,7 +19,7 @@ export const GlobalStateContextProvider = (props) => {
 
     useEffect(() => {
         localStorage.setItem('todos', JSON.stringify(todoList))
-    }, [todoList, filterStatus])
+    }, [todoList, filterStatus,])
 
 
     const filterHandler = () => {

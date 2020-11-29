@@ -13,7 +13,8 @@ const Todo = () => {
         addToList,
         setFilterStatus,
         filteredTodo,
-        clearCompleted
+        clearCompleted,
+        todoList
     } = useContext(GlobalStateContext)
 
     const handleAddItemToList = () => {
@@ -52,7 +53,7 @@ const Todo = () => {
                 </ul>
                 <div className="todo-list-footer">
                     <div className="items-left">
-                        {`${0} items left`}
+                        {`${todoList.filter(item => item.isDone === false).length} items left`}
                     </div>
                     <div className="items-filter-btns">
                         <button onClick={() => setFilterStatus('all')} className="fltr-btn">All</button>
