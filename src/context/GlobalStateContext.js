@@ -42,7 +42,6 @@ export const GlobalStateContextProvider = (props) => {
             isDone: false
         }
         setTodoList([item, ...todoList])
-        console.log(todoList)
     }
 
     const removeFromList = (id) => {

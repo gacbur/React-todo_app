@@ -47,9 +47,9 @@ const Todo = () => {
             </div>
             <div className="todo-list">
                 <ul className="list-cnt">
-                    {filteredTodo.map(item => (
+                    {filteredTodo.length > 0 ? filteredTodo.map(item => (
                         <ListItem key={item.id} item={item} />
-                    ))}
+                    )) : <div className="list-empty"><p>Nothing in here...</p></div>}
                 </ul>
                 <div className="todo-list-footer">
                     <div className="items-left">

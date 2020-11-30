@@ -9,6 +9,7 @@
 .todo-cnt,
 .todo-add,
 .todo-list,
+.list-empty,
 .todo-add-btn-cnt,
 .app-image-background,
 .todo-list-footer,
@@ -41,7 +42,7 @@
 }
 
 .todo-cnt{
-  max-width: 800px;
+  max-width: 600px;
   width:60%;
   height: 80%;
   margin: 60px auto;
@@ -173,6 +174,20 @@
  cursor: pointer;
 }
 
+.list-empty{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  font-size: 1.8em;
+  height: 2em;
+  text-align: center;
+  color: hsl(236, 9%, 61%);
+  padding:1.5em 0em;
+  border-bottom: 1px solid #979797;
+}
+
 .todo-list-footer{
   display: flex;
   flex-direction: row;
@@ -241,4 +256,11 @@
     padding: .4em;
   }
 
+  .list-empty{
+    color: hsl(236, 9%, 61%);
+  }
+
+  .list-item p{
+    padding-left: .7em;
+  }
 }
