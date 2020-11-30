@@ -14,6 +14,18 @@ export const GlobalStateContextProvider = (props) => {
     const [filteredTodo, setFilteredTodo] = useState([])
 
     useEffect(() => {
+        const filterHandler = () => {
+            switch (filterStatus) {
+                case "completed":
+                    setFilteredTodo(todoList.filter(todo => todo.isDone === true))
+                    break;
+                case "active":
+                    setFilteredTodo(todoList.filter(todo => todo.isDone === false))
+                    break;
+                default:
+                    setFilteredTodo(todoList)
+            }
+        }
         filterHandler()
     }, [todoList, filterStatus])
 
@@ -22,18 +34,7 @@ export const GlobalStateContextProvider = (props) => {
     }, [todoList, filterStatus,])
 
 
-    const filterHandler = () => {
-        switch (filterStatus) {
-            case "completed":
-                setFilteredTodo(todoList.filter(todo => todo.isDone === true))
-                break;
-            case "active":
-                setFilteredTodo(todoList.filter(todo => todo.isDone === false))
-                break;
-            default:
-                setFilteredTodo(todoList)
-        }
-    }
+
 
     const addToList = (text) => {
         const item = {
