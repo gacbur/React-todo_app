@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react'
+import uuid from 'react-uuid'
 
 const initialState = {
     todoItems: localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []
@@ -35,7 +36,7 @@ export const GlobalStateContextProvider = (props) => {
 
     const addToList = (text) => {
         const item = {
-            id: todoList.length + 1,
+            id: uuid(),
             text,
             isDone: false
         }
