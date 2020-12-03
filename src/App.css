@@ -134,6 +134,7 @@
 }
 
 .list-item{
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -141,7 +142,36 @@
   list-style: none;
   color:#494C6B;
   padding-right: 1.5em;
-  padding-left: .7em;
+  padding-left: 3em;
+  cursor: pointer;
+}
+
+.list-item.checked{
+  color:#494C6B;
+}
+
+.list-item.checked::after{
+  position: absolute;
+  font-weight: 600;
+  left:20px;
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-size: .7em;
+  padding: .66em;
+  color:white;
+  background: linear-gradient( hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border-radius: 50em;
+}
+
+.list-item.notchecked::after{
+  position: absolute;
+  left:20px;
+  content: "";
+  padding:.8em;
+  color:#494C6B;
+  background-color: white;
+  border:1px solid grey;
+  border-radius: 60em;
 }
 
 .list-item:first-child, .list-item + .list-item{
@@ -153,21 +183,18 @@
   padding:.5em;
 }
 
-.list-item input[type="checkbox"]{
-    height:1.4em;
-}
-
 .list-item:hover .delete-item-icon{
   opacity:1;
   transition: .5s;
 }
 
-.list-item input[type="checkbox"]{
-  padding:.5em;
+.list-item p{
+  padding:1.2em;
+  flex-grow: 1;
 }
 
-.list-item p{
-  flex-grow: 1;
+.list-item-text-checked{
+  text-decoration: line-through;
 }
 
 .list-item img{
@@ -263,4 +290,10 @@
   .list-item p{
     padding-left: .7em;
   }
+
+  .list-item .delete-item-icon{
+    opacity:1;
+    transition: .5s;
+  }
+
 }

@@ -5,24 +5,16 @@ import { GlobalStateContext } from '../context/GlobalStateContext'
 const ListItem = ({ item }) => {
 
     const { removeFromList, listItemCompleted } = useContext(GlobalStateContext)
-    const [isChecked, setIsChecked] = useState(false)
 
-    const handleChecked = (e) => {
-        setIsChecked(prevState => !prevState)
-        if (e.target.checked) {
-            listItemCompleted(item.id)
-        }
+    const handleChecked = (id) => {
+        listItemCompleted(id)
     }
 
     return (
         <>
-            <li className="list-item">
-                <input
-                    onChange={handleChecked}
-                    checked={isChecked}
-                    type="checkbox"
-                ></input>
-                <p>{item.text}</p>
+            <li
+                className={`list-item ${item.isDone ? 'checked' : 'notchecked'}`} >
+                <p className={`${item.isDone ? 'list-item-text-checked' : ''}`} onClick={() => handleChecked(item.id)}>{item.text}</p>
                 <img
                     className="delete-item-icon"
                     onClick={() => removeFromList(item.id)}

@@ -33,9 +33,6 @@ export const GlobalStateContextProvider = (props) => {
         localStorage.setItem('todos', JSON.stringify(todoList))
     }, [todoList, filterStatus,])
 
-
-
-
     const addToList = (text) => {
         const item = {
             id: todoList.length + 1,

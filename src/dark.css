@@ -46,3 +46,8 @@ body.dark-mode button:hover{
     color:  hsl(236, 33%, 92%);
 }
 
+body.dark-mode .list-item.notchecked::after{
+    background-color: hsl(235, 24%, 19%);
+    border: solid 1px hsl(237, 14%, 26%);
+}
+
