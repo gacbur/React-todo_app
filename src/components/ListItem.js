@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import cross from '../icons/cross.svg'
 import { GlobalStateContext } from '../context/GlobalStateContext'
 
